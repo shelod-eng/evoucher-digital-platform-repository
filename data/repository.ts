@@ -16,6 +16,7 @@ import {
   LockKeyhole,
   Network,
   Route,
+  Search,
   ShieldCheck,
   TestTube2,
 } from 'lucide-react';
@@ -23,6 +24,7 @@ import {
 export type RepositoryStatus =
   | 'IMPLEMENTED'
   | 'DOCUMENTED'
+  | 'VERIFIED'
   | 'CONTROLLED MOCK / SANDBOX'
   | 'PENDING DEPENDENCY'
   | 'GAP / NOT READY'
@@ -67,6 +69,7 @@ export type SectionContent = {
 export const statusDescriptions: Record<RepositoryStatus, string> = {
   IMPLEMENTED: 'Implementation exists in the platform or supporting repository evidence.',
   DOCUMENTED: 'Architecture or engineering information is captured as documentation.',
+  VERIFIED: 'Evidence has been traced to an identified source file, repository, route, workflow, or deployment reference.',
   'CONTROLLED MOCK / SANDBOX': 'Deliberate sandbox boundary pending external approval or integration.',
   'PENDING DEPENDENCY': 'Requires an external, commercial, legal, or technical dependency.',
   'GAP / NOT READY': 'Known readiness gap that requires engineering or governance closure.',
@@ -82,10 +85,12 @@ export const navigation: NavItem[] = [
   { title: 'Data', href: '/data', summary: 'Entities, database architecture, data flows, reporting, and reconciliation data.', icon: Database },
   { title: 'Security', href: '/security', summary: 'Identity, authorization, secrets, audit, controls, and DevSecOps.', icon: ShieldCheck },
   { title: 'Infrastructure', href: '/infrastructure', summary: 'Cloud, Vercel, GitHub, CI/CD, environments, and deployment boundaries.', icon: Cloud },
+  { title: 'API Catalogue', href: '/api-catalogue', summary: 'Verified API route catalogue with method, domain, auth posture, and source file evidence.', icon: Code2 },
   { title: 'Testing', href: '/testing', summary: 'Test strategy, E2E, controlled sandbox, acceptance testing, and evidence.', icon: TestTube2 },
   { title: 'ADRs', href: '/adrs', summary: 'Architecture decision index and decision records.', icon: GitBranch },
   { title: 'Evidence', href: '/evidence', summary: 'Architecture, code, API, database, deployment, screenshot, and security evidence.', icon: Archive },
   { title: 'Controlled Mocks', href: '/mocks', summary: 'Sandbox boundaries, pending dependencies, known gaps, and readiness.', icon: ClipboardCheck },
+  { title: 'Deployment History', href: '/deployment-history', summary: 'GitHub, Vercel, live-system, and deployment evidence.', icon: Search },
 ];
 
 export const platformComponents: PlatformComponent[] = [

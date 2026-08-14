@@ -15,6 +15,7 @@ import {
 import type { PlatformComponent, RepositoryRecord } from '@/data/repository';
 import { RepositoryShell } from './RepositoryShell';
 import { StatusBadge } from './StatusBadge';
+import { KnowledgeSearch } from './KnowledgeSearch';
 
 function DetailPanel({ record }: { record: PlatformComponent | RepositoryRecord }) {
   const component = record as Partial<PlatformComponent>;
@@ -84,8 +85,8 @@ export function CommandCentre() {
   return (
     <RepositoryShell>
       <section className="overflow-hidden rounded-lg border border-evoucher-line bg-white shadow-enterprise">
-        <div className="grid gap-8 p-6 sm:p-8 xl:grid-cols-[1.25fr_0.75fr]">
-          <div>
+        <div className="grid min-w-0 gap-8 p-6 sm:p-8 xl:grid-cols-[1.25fr_0.75fr]">
+          <div className="min-w-0">
             <div className="flex flex-wrap gap-2">
               <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-evoucher-blue">
                 Architecture Repository
@@ -94,19 +95,19 @@ export function CommandCentre() {
                 Foundation Build
               </span>
             </div>
-            <h1 className="mt-5 max-w-4xl font-headline text-4xl font-bold leading-tight text-evoucher-navy sm:text-5xl">
+            <h1 className="mt-5 max-w-4xl break-words font-headline text-4xl font-bold leading-tight text-evoucher-navy sm:text-5xl">
               eVoucher Digital Platform
             </h1>
-            <p className="mt-3 font-headline text-2xl font-semibold text-slate-700">
+            <p className="mt-3 break-words font-headline text-xl font-semibold text-slate-700 sm:text-2xl">
               Enterprise Repository & Architecture Command Centre
             </p>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+            <p className="mt-5 max-w-3xl break-words text-lg leading-8 text-slate-600">
               The architectural knowledge centre for the eVoucher digital ecosystem.
             </p>
           </div>
-          <div className="rounded-lg border border-evoucher-line bg-evoucher-mist p-5">
+          <div className="min-w-0 rounded-lg border border-evoucher-line bg-evoucher-mist p-5">
             <p className="text-xs font-bold uppercase tracking-wide text-evoucher-blue">Evidence-first rule</p>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
+            <p className="mt-3 break-words text-sm leading-6 text-slate-600">
               This repository distinguishes documented architecture, implemented capability, controlled sandbox boundaries,
               pending dependencies, readiness gaps, and evidence still to be captured.
             </p>
@@ -124,21 +125,29 @@ export function CommandCentre() {
         {commandCards.map((card) => {
           const Icon = card.icon;
           return (
-            <Link key={card.title} href={card.href} className="group rounded-lg border border-evoucher-line bg-white p-5 shadow-card transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-enterprise">
-              <div className="flex items-start justify-between gap-4">
+            <Link key={card.title} href={card.href} className="group min-w-0 rounded-lg border border-evoucher-line bg-white p-5 shadow-card transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-enterprise">
+              <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
                 <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-evoucher-sky text-evoucher-blue">
                   <Icon size={22} />
                 </span>
                 <StatusBadge status={card.status} />
               </div>
-              <h2 className="mt-4 font-headline text-xl font-semibold text-evoucher-navy">{card.title}</h2>
-              <p className="mt-2 min-h-[72px] text-sm leading-6 text-slate-600">{card.summary}</p>
+              <h2 className="mt-4 break-words font-headline text-xl font-semibold text-evoucher-navy">{card.title}</h2>
+              <p className="mt-2 min-h-[72px] break-words text-sm leading-6 text-slate-600">{card.summary}</p>
               <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-evoucher-blue">
                 Open section <ArrowRight className="transition group-hover:translate-x-1" size={16} />
               </span>
             </Link>
           );
         })}
+      </section>
+
+      <section className="mt-6">
+        <KnowledgeSearch />
+      </section>
+
+      <section className="mt-6">
+        <KnowledgeSearch />
       </section>
 
       <section className="mt-6 grid gap-6 xl:grid-cols-[1fr_420px]">

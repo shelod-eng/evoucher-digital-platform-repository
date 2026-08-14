@@ -1,10 +1,12 @@
 import { sectionContent } from '@/data/repository';
+import { phase3SectionRecords } from '@/data/phase3';
 import { RepositoryShell } from './RepositoryShell';
 import { RecordGrid } from './RecordGrid';
 import { StatusBadge } from './StatusBadge';
 
 export function SectionPage({ sectionKey }: { sectionKey: keyof typeof sectionContent }) {
   const section = sectionContent[sectionKey];
+  const records = phase3SectionRecords[sectionKey] ?? section.records;
   const Icon = section.icon;
 
   return (
@@ -27,7 +29,7 @@ export function SectionPage({ sectionKey }: { sectionKey: keyof typeof sectionCo
       </section>
 
       <section className="mt-6">
-        <RecordGrid records={section.records} />
+        <RecordGrid records={records} />
       </section>
     </RepositoryShell>
   );

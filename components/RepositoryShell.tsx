@@ -13,8 +13,8 @@ export function RepositoryShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen text-evoucher-ink">
       <header className="sticky top-0 z-40 border-b border-evoucher-line bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-[1480px] items-center justify-between px-4 py-3 sm:px-6">
-          <Link href="/" className="flex min-w-0 items-center gap-3">
+        <div className="mx-auto flex max-w-[1480px] items-center justify-between gap-3 px-4 py-3 sm:px-6">
+          <Link href="/" className="flex min-w-0 flex-1 items-center gap-3 overflow-hidden">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-evoucher-blue text-lg font-bold text-white shadow-card">
               eV
             </span>
@@ -80,7 +80,7 @@ export function RepositoryShell({ children }: { children: React.ReactNode }) {
           </div>
         </aside>
 
-        <main className="min-w-0 px-4 py-6 sm:px-6 lg:px-8">{children}</main>
+        <main className="min-w-0 overflow-hidden px-4 py-6 sm:px-6 lg:px-8">{children}</main>
       </div>
     </div>
   );
