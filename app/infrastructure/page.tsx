@@ -1,5 +1,5 @@
-import { SectionPage } from '@/components/SectionPage';
+import { PresentationSection } from '@/components/PresentationSection';
 
 export default function InfrastructurePage() {
-  return <SectionPage sectionKey="infrastructure" />;
+  return <PresentationSection areaKey="infrastructure" />;
 }

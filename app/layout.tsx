@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'eVoucher Digital Platform - Enterprise Repository',
+  title: 'eVoucher Digital Platform - Enterprise Presentation Portal',
   description:
-    'Enterprise Repository and Architecture Command Centre for the eVoucher Digital Platform ecosystem.',
+    'Executive presentation portal, architecture narrative, evidence model, and system front door for the eVoucher Digital Platform ecosystem.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

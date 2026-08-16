@@ -78,3 +78,20 @@ button,
 li {
   overflow-wrap: anywhere;
 }
+
+@media (max-width: 640px) {
+  main > section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  main {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .presentation-hero-content {
+    width: calc(100vw - 3.5rem);
+    max-width: calc(100vw - 3.5rem);
+  }
+}
